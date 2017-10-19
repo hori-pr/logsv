@@ -38,7 +38,7 @@ if(empty($_GET['tag']))
 else
 {
 	$tag = $_GET['tag'];
-	$query = "SELECT * FROM $tb INNER JOIN tag ON $tb.id WHERE tag.tag='$tag' AND log.id=tag.id ORDER BY $tb.id DESC LIMIT 32";
+	$query = "SELECT * FROM $tb INNER JOIN tag ON log.id=tag.id WHERE tag.tag='$tag' ORDER BY $tb.id DESC LIMIT 32";
 }
 
 $result = $mysqli->query($query) or die($mysqli->error);
