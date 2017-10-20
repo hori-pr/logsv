@@ -46,13 +46,17 @@ echo "<table border=1>";
 while($row = $result->fetch_row())
 {
 	$cnt = count($row);
-	if($row[2] <= 8)
+	switch($row[3])
 	{
+	case 1:
+		echo "<tr style=\"color:blue\">";
+		break;
+	case 2:
+		echo "<tr style=\"color:red\">";
+		break;
+	default:
 		echo "<tr>";
-	}
-	else
-	{
-		echo "<tr>";
+		break;
 	}
 	for($i = 0; $i < $cnt; $i++)
 	{
